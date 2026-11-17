@@ -207,12 +207,30 @@
  .search-box>div:first-child{gap:10px}
  .search-box>div:first-child>strong{font-size:clamp(11px,3.1vw,14px);line-height:1.3}
 }
+#oraculo .oracle-shell{max-width:680px;margin:0 0 48px}
+#oraculo [hidden]{display:none!important}
+#oraculo .oracle-actions{display:flex;flex-wrap:wrap;gap:8px}
+#oraculo .oracle-panel{margin-top:18px;padding:clamp(14px,4vw,28px);border:1px solid var(--line);background:var(--white);border-radius:3px}
+#oraculo button{cursor:pointer}
+#oraculo [aria-disabled="true"]{cursor:wait;opacity:.65}
+#oraculo button:focus-visible,#oraculo input:focus-visible,#oraculo select:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+#oraculo form{display:grid;gap:8px;max-width:460px}
+#oraculo form label{font-size:.9rem;font-weight:700}
+#oraculo form label span{font-weight:400;color:var(--muted)}
+#oraculo input,#oraculo select{width:100%;min-width:0;min-height:44px;padding:9px 10px;margin-bottom:6px;border:1px solid var(--muted);border-radius:3px;background:var(--paper);color:var(--ink);font:inherit;font-size:16px}
+#oraculo form button{justify-self:start}
+#oraculo .oracle-live:not(:empty){margin-top:16px;overflow-wrap:anywhere}
+#oraculo .oracle-result{border:1px solid var(--line);border-top:3px solid var(--ink);padding:14px 16px;margin:0 0 12px;background:var(--paper)}
+#oraculo .oracle-result h2{font-size:clamp(24px,5vw,36px);line-height:1.1;margin:5px 0 10px}
+#oraculo .oracle-result p{margin:7px 0 0}
+#oraculo .oracle-keywords{font-weight:700}
+#oraculo #oracle-copy-status:empty{margin:0}
 </style>
 <link rel="icon" type="image/png" href="./assets/24xx_brasil_d6.png">
 <meta property="og:type" content="website"><meta property="og:title" content="24XX Brasil — Aprenda, jogue, crie."><meta property="og:description" content="Regras, variantes e fichas de personagem em português para jogar e criar com 24XX.">
 </head>
 <body>
-<header class="top"><div class="wrap top-in"><a class="brand" href="#inicio" aria-label="24XX Brasil, início"><img src="./assets/24xx_brasil_d6.png" alt="Carimbo original de dado d6"><span class="brand-name">24XX</span><span class="brand-small">BRASIL</span></a><nav class="nav" aria-label="Navegação principal"><a href="#inicio" data-nav="inicio">Início</a><a href="#regras" data-nav="regras">Regras</a><a href="#aprender" data-nav="aprender">Aprender</a><a href="#variantes" data-nav="variantes">Variantes</a><a href="#biblioteca" data-nav="biblioteca">Biblioteca</a><a href="#dados" data-nav="dados">Dados</a></nav><button class="search-trigger" id="openSearch" aria-label="Pesquisar no site"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.7" cy="10.7" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5.3 5.3" stroke="currentColor" stroke-width="1.8" fill="none"/></svg><span class="search-label">Pesquisar</span><span class="key">/</span></button><button class="mobile-menu" id="mobileMenu" aria-expanded="false"><span>Menu</span><svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button></div><div class="mobile-nav" id="mobileNav"><a href="#inicio">Início</a><a href="#regras">Regras básicas</a><a href="#aprender">Aprender a jogar</a><a href="#variantes">Variantes</a><a href="#biblioteca">Biblioteca e PDFs</a><a href="#dados">Rolador de dados</a></div></header>
+<header class="top"><div class="wrap top-in"><a class="brand" href="#inicio" aria-label="24XX Brasil, início"><img src="./assets/24xx_brasil_d6.png" alt="Carimbo original de dado d6"><span class="brand-name">24XX</span><span class="brand-small">BRASIL</span></a><nav class="nav" aria-label="Navegação principal"><a href="#inicio" data-nav="inicio">Início</a><a href="#regras" data-nav="regras">Regras</a><a href="#aprender" data-nav="aprender">Aprender</a><a href="#variantes" data-nav="variantes">Variantes</a><a href="#biblioteca" data-nav="biblioteca">Biblioteca</a><a href="#dados" data-nav="dados">Dados</a><a href="#oraculo" data-nav="oraculo">Oráculo</a></nav><button class="search-trigger" id="openSearch" aria-label="Pesquisar no site"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.7" cy="10.7" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5.3 5.3" stroke="currentColor" stroke-width="1.8" fill="none"/></svg><span class="search-label">Pesquisar</span><span class="key">/</span></button><button class="mobile-menu" id="mobileMenu" aria-expanded="false"><span>Menu</span><svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button></div><div class="mobile-nav" id="mobileNav"><a href="#inicio">Início</a><a href="#regras">Regras básicas</a><a href="#aprender">Aprender a jogar</a><a href="#variantes">Variantes</a><a href="#biblioteca">Biblioteca e PDFs</a><a href="#dados">Rolador de dados</a><a href="#oraculo" data-nav="oraculo">Oráculo</a></div></header>
 <main>
 <section id="inicio" class="page active"><div class="wrap"><section class="hero"><div><div class="eyebrow">Referência de Sistema · RPG minimalista</div><h1><span>APRENDA.</span><span>JOGUE.</span><span>CRIE.</span></h1><p class="lead">Regras simples, possibilidades infinitas. Uma plataforma brasileira para explorar o sistema 24XX, experimentar variantes e construir seus próprios mundos.</p><div class="actions"><a class="btn" href="#regras">Começar pelas regras <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/></svg></a><a class="btn ghost" href="#aprender">Aprender a jogar <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/></svg></a></div><p class="micro" style="margin-top:22px">PROJETO INDEPENDENTE · BASEADO EM 24XX DE JASON TOCCI</p></div><div class="hero-art"><img src="./assets/24xx_brasil_d6.png" alt="Emblema original de dado de seis faces em estilo de carimbo"></div></section>
 <section class="section"><div class="section-head"><div><span class="eyebrow">01 / Explore</span><h2>UM SISTEMA, MUITAS PORTAS.</h2></div><span class="micro">Escolha por onde começar ↓</span></div><div class="cards"><a class="tile" href="#aprender"><span class="nr">01 — APRENDER</span><h3>Aprenda a jogar</h3><p>Entenda ações, riscos, dados e resultados. Sem precisar conhecer nenhum cenário.</p><span class="arr"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></a><a class="tile" href="#regras"><span class="nr">02 — REFERÊNCIA</span><h3>Consulte as regras</h3><p>Uma referência direta e autossuficiente para criar personagens, resolver riscos e começar a jogar.</p><span class="arr"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></a><a class="tile" href="#variantes"><span class="nr">03 — EXPERIMENTAÇÃO</span><h3>Explore variantes</h3><p>Regras opcionais e modulares para combinar e adaptar. Curadoria em preparação.</p><span class="arr"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></a></div></section>
@@ -921,6 +939,45 @@
 <section id="dados" class="page" aria-labelledby="dados-title"><div class="wrap"><header class="page-title"><div class="eyebrow">Ferramenta de mesa · Rolagem</div><h1 id="dados-title">ROLADOR DE DADOS.</h1><p class="lead">Selecione um dado e role. O d20 também está disponível para tabelas aleatórias.</p></header>
 <div class="dice-page"><div class="eyebrow">01 / Escolha um dado</div><div class="dice-pick" role="group" aria-label="Tipo de dado"><button type="button" class="dice-choice" data-die="4" aria-pressed="false">d4</button><button type="button" class="dice-choice selected" data-die="6" aria-pressed="true">d6</button><button type="button" class="dice-choice" data-die="8" aria-pressed="false">d8</button><button type="button" class="dice-choice" data-die="10" aria-pressed="false">d10</button><button type="button" class="dice-choice" data-die="12" aria-pressed="false">d12</button><button type="button" class="dice-choice" data-die="20" aria-pressed="false">d20</button></div><div class="eyebrow">02 / Resultado</div><div class="dice-result-box"><span id="diceResult" class="dice-result" aria-live="polite" aria-atomic="true">—</span><div class="dice-feedback"><span id="diceLabel" class="dice-label">d6 · Pronto para rolar</span><p class="micro">O d20 é usado para tabelas, sem faixas de resultado fixas.</p></div></div>
 <div class="dice-actions"><button class="btn" type="button" id="diceRoll">ROLAR DADO</button><button class="btn ghost" type="button" id="diceClear">LIMPAR</button></div><p class="note">As faixas Desastre, Revés e Sucesso são exibidas para d4 a d12. Um resultado só deve ser interpretado depois que o risco foi anunciado. Esta ferramenta funciona localmente no navegador.</p><a href="#regras/rolagens" class="inline-link">Consultar regras de rolagem →</a></div></div></section>
+<section id="oraculo" class="page" aria-labelledby="oraculo-title">
+  <div class="wrap">
+    <header class="page-title">
+      <h1 id="oraculo-title">ORÁCULO.</h1>
+      <p class="lead">Tire uma carta para inspirar a cena ou consulte o oráculo sobre um fato incerto.</p>
+    </header>
+    <div class="oracle-shell">
+      <div class="oracle-actions" role="group" aria-label="Modo do oráculo">
+        <button class="btn" type="button" data-oracle-mode="carta" aria-pressed="true" aria-controls="oracle-card">Carta</button>
+        <button class="btn ghost" type="button" data-oracle-mode="resposta" aria-pressed="false" aria-controls="oracle-answer">Sim ou não</button>
+      </div>
+      <div id="oracle-card" class="oracle-panel">
+        <button class="btn" id="oracle-draw" type="button">Tirar carta</button>
+        <div class="oracle-live" id="oracle-card-live" aria-live="polite" aria-atomic="true"></div>
+        <button class="btn ghost" id="oracle-copy-card" type="button" hidden>Copiar resultado</button>
+      </div>
+      <div id="oracle-answer" class="oracle-panel" hidden>
+        <form id="oracle-form">
+          <label for="oracle-question">Pergunta <span>(opcional)</span></label>
+          <input id="oracle-question" type="text" placeholder="O elevador ainda tem energia?">
+          <label for="oracle-chance">Chance de Sim</label>
+          <select id="oracle-chance" name="chance">
+            <option value="improvavel">Improvável · 25%</option>
+            <option value="equilibrada" selected>Equilibrada · 50%</option>
+            <option value="provavel">Provável · 75%</option>
+          </select>
+          <button class="btn" type="submit">Consultar</button>
+        </form>
+        <div class="oracle-live" id="oracle-answer-live" aria-live="polite" aria-atomic="true"></div>
+        <div class="oracle-actions">
+          <button class="btn" id="oracle-follow" type="button" hidden>Tirar carta para o desdobramento</button>
+          <button class="btn ghost" id="oracle-copy-answer" type="button" hidden>Copiar resultado</button>
+        </div>
+        <div class="oracle-live" id="oracle-follow-live" aria-live="polite" aria-atomic="true"></div>
+      </div>
+      <p id="oracle-copy-status" role="status"></p>
+    </div>
+  </div>
+</section>
 <section id="variantes" class="page"><div class="wrap"><header class="page-title"><div class="eyebrow">Laboratório · Regras opcionais</div><h1>VARIANTES.</h1><p class="lead">Pequenas mudanças. Novas possibilidades.</p></header><div class="variant-intro"><span class="eyebrow">10 módulos para experimentar</span><p>Escolha regras que combinem com sua mesa. Algumas complementam as Regras Básicas; outras substituem procedimentos.</p></div><div class="variant-toolbar"><div class="variant-toolbar-title"><span class="eyebrow">Módulos</span><span id="variantCount" aria-live="polite">10 de 10</span></div><div class="variant-filters" role="group" aria-label="Filtrar variantes por categoria"><button type="button" class="variant-filter" data-vfilter="todos" aria-pressed="true">Todos</button><button type="button" class="variant-filter" data-vfilter="personagens" aria-pressed="false">Personagens</button><button type="button" class="variant-filter" data-vfilter="riscos" aria-pressed="false">Dados e riscos</button><button type="button" class="variant-filter" data-vfilter="relacoes" aria-pressed="false">Relações</button><button type="button" class="variant-filter" data-vfilter="planejamento" aria-pressed="false">Planejamento</button><button type="button" class="variant-filter" data-vfilter="progressao" aria-pressed="false">Progressão</button><button type="button" class="variant-filter" data-vfilter="exploracao" aria-pressed="false">Exploração</button><button type="button" class="variant-filter" data-vfilter="confrontos" aria-pressed="false">Confrontos</button></div><div class="variant-filter-actions"><button type="button" id="variantExpandAll">Abrir os visíveis</button><button type="button" id="variantCollapseAll">Fechar todos</button></div></div><div class="variant-list"><details class="variant-module" id="v-tracos-vocacoes" data-vcategory="personagens"><summary><span class="variant-number">01</span><span class="variant-head"><span class="variant-category">Personagens · Alternativa de competências</span><span class="variant-name">Traços e Vocações</span><span class="variant-teaser">Defina o personagem por uma característica marcante e uma ocupação, em vez de uma lista extensa de Perícias.</span></span><span class="variant-toggle" aria-hidden="true">+</span></summary><div class="variant-body"><p>Um Traço descreve <strong>o que torna o personagem singular</strong>; uma Vocação descreve <strong>o que aprendeu a fazer</strong>. Os dois podem conceder competência, mas apenas um dado é utilizado por ação.</p><h4>COMO USAR</h4><p>Na criação, escolha <strong>um Traço</strong> e <strong>uma Vocação</strong>, ambos com <strong>d8</strong> quando pertinentes. Um Traço também pode permitir algo que seria impossível a outras pessoas, como voar ou perceber emoções à distância. A Vocação cobre as atividades coerentes com a ocupação escolhida.</p>
 <p>Ao enfrentar um risco, use <strong>o maior Dado de Perícia pertinente</strong>, proveniente do Traço ou da Vocação; não role ambos. Sem competência relevante, role d6. Se estiver Prejudicado, role d4, conforme as Regras Básicas. Aumentos posteriores seguem a escala d8 → d10 → d12.</p><h4>EXEMPLO</h4><div class="variant-example"><p><strong>Alada (d8)</strong> permite que uma mensageira voe. Sua <strong>Vocação de Cartógrafa (d8)</strong> ajuda a reconhecer rotas e interpretar mapas. Ao escapar voando por um túnel em colapso, ela escolhe o dado pertinente, sem somá-los.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Substitui</strong> o modelo de seleção de Perícias específicas ou Conjuntos de Perícias na criação. Não há necessidade de combinar os três modelos. É compatível com Evolução por Sacrifício (módulo 08).</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Battle Moon v1.1</span> (p. 2–3) <span class="variant-source-title">2400 Xot v1.2</span> (p. 2).<span class="variant-id">Estudo: VB-002</span></div></div></details><details class="variant-module" id="v-qualidades" data-vcategory="personagens"><summary><span class="variant-number">02</span><span class="variant-head"><span class="variant-category">Personagens · Complementar</span><span class="variant-name">Qualidades</span><span class="variant-teaser">Uma característica marcante pode render outro dado do mesmo tamanho que o da competência utilizada.</span></span><span class="variant-toggle" aria-hidden="true">+</span></summary><div class="variant-body"><p>Uma Qualidade é algo que diferencia o personagem além de suas Perícias: uma aptidão, hábito, relação ou particularidade extraordinária.</p><h4>COMO USAR</h4><p>Na criação, escolha <strong>uma Qualidade</strong>. Quando ela contribuir diretamente para evitar um risco, role <strong>um dado extra do mesmo tamanho que o Dado de Perícia aplicável</strong> e mantenha o maior resultado. A Qualidade não é, por si só, uma nova Perícia; ela precisa ter relevância concreta na ação.</p><h4>EXEMPLO</h4><div class="variant-example"><p>Uma detetive com <strong>Olhar Clínico</strong> examina um laboratório sabotado. Sua Investigação é d8; como a Qualidade se aplica à observação dos vestígios, ela rola <strong>2d8</strong> e utiliza o maior.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Acrescenta</strong> uma característica a um personagem com Perícias ou Conjuntos. Pode ajudar a justificar itens no módulo 07. Se combinada com outras fontes de dados extras, a mesa deve decidir o limite de acumulação antes da sessão.</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Habs &amp; Gardens v1.3</span> (p. 2).<span class="variant-id">Estudo: VB-003</span></div></div></details><details class="variant-module" id="v-esforco-arriscado" data-vcategory="riscos"><summary><span class="variant-number">03</span><span class="variant-head"><span class="variant-category">Dados e riscos · Complementar</span><span class="variant-name">Esforço Arriscado</span><span class="variant-teaser">Melhore suas chances agora, mas aceite ficar Prejudicado na próxima rolagem.</span></span><span class="variant-toggle" aria-hidden="true">+</span></summary><div class="variant-body"><p>Às vezes é possível forçar o próprio desempenho além do limite seguro. O benefício é imediato; o desgaste vem depois.</p><h4>COMO USAR</h4><p>Antes de uma ação arriscada, descreva o esforço, sacrifício de ritmo ou manobra exigente que justifica <strong>adicionar um d6</strong> à rolagem atual. Depois dessa ação, o personagem fica <strong>Prejudicado na próxima rolagem</strong> que realizar, mesmo que tenha obtido Sucesso.</p>
 <p>O esforço não altera as faixas de Desastre, Revés e Sucesso. Se já houver outro impedimento, a mesa descreve como ambos aparecem na ficção; não é necessário acumular penalidades numéricas.</p><h4>EXEMPLO</h4><div class="variant-example"><p>Uma guerreira segura a comporta por alguns segundos para que os aliados escapem. Rola seu dado normal com <strong>+d6</strong>, mas fica com os braços exaustos e usará <strong>d4</strong> na próxima rolagem.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Acrescenta</strong> uma opção de ajuda com custo futuro. Diferentemente da ajuda de aliado, não transfere o risco a outra pessoa. Recomenda-se evitar repetir esforços sem sofrer a rolagem Prejudicada pendente.</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Battle Moon v1.1</span> (p. 2–3) <span class="variant-source-title">2400 Data Loss v1.3</span> (p. 2).<span class="variant-id">Estudo: VB-005</span></div></div></details><details class="variant-module" id="v-vinculos" data-vcategory="relacoes"><summary><span class="variant-number">04</span><span class="variant-head"><span class="variant-category">Relações · Complementar</span><span class="variant-name">Vínculos</span><span class="variant-teaser">Desenvolva relações entre personagens e leve esses vínculos para as rolagens de ajuda.</span></span><span class="variant-toggle" aria-hidden="true">+</span></summary><div class="variant-body"><p>A confiança entre companheiros também pode crescer na ficha, não apenas na história.</p><h4>COMO USAR</h4><p>Entre missões, represente uma cena significativa entre dois personagens. Se o relacionamento se aprofundar, eleve o <strong>Dado de Vínculo</strong> entre eles um passo:</p>
@@ -953,7 +1010,7 @@ function updateRulesNav(slug){document.querySelectorAll('.rules-toc a').forEach(
 function route(){let hash=(location.hash||'#inicio').slice(1);let [id,sub]=hash.split('/');let page=document.getElementById(id);if(!page||!page.classList.contains('page'))id='inicio';document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===id));document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileMenu').setAttribute('aria-expanded','false');
  if(id==='aprender'){showChapter(sub||activeChapter)}
  if(id==='regras')updateRulesNav(sub||'como-jogar');
- const title={'inicio':'24XX Brasil','regras':'Regras Básicas','aprender':'Aprender','dados':'Rolador de Dados','variantes':'Variantes','biblioteca':'Biblioteca'};
+ const title={'inicio':'24XX Brasil','regras':'Regras Básicas','aprender':'Aprender','dados':'Rolador de Dados','oraculo':'Oráculo','variantes':'Variantes','biblioteca':'Biblioteca'};
  document.title=id==='inicio'?'24XX Brasil — Aprenda, jogue, crie.':title[id]+' — 24XX Brasil';
  if(id==='regras'&&ruleSlugs.includes(sub)){requestAnimationFrame(()=>{let target=document.getElementById('r-'+sub);if(target)target.scrollIntoView({behavior:'instant',block:'start'})})}
  else if(id==='variantes'&&sub&&document.getElementById('v-'+sub)){showVariant(sub)}
@@ -968,7 +1025,7 @@ function setDie(n){activeDie=n;document.querySelectorAll('[data-die]').forEach(b
 document.querySelector('.dice-pick').addEventListener('click',e=>{let b=e.target.closest('[data-die]');if(b)setDie(Number(b.dataset.die))});
 document.getElementById('diceRoll').addEventListener('click',()=>{let r=randomInt(activeDie),label=activeDie===20?'Resultado para tabela':r<=2?'Desastre':r<=4?'Revés':'Sucesso';document.getElementById('diceResult').textContent=r;document.getElementById('diceLabel').textContent='d'+activeDie+' · '+label});
 document.getElementById('diceClear').addEventListener('click',()=>setDie(activeDie));
-const searchable=[["Regras Básicas", "#regras"], ["Como jogar", "#regras/como-jogar"], ["Rolagens", "#regras/rolagens"], ["Criando personagens", "#regras/personagens"], ["Equipamentos", "#regras/equipamentos"], ["Carga", "#regras/carga"], ["Defesa", "#regras/defesa"], ["Ferimentos", "#regras/ferimentos"], ["Progressão e recompensas", "#regras/progressao"], ["Narrador", "#regras/narrador"], ["Aprender — 01. O que é 24xx?", "#aprender/01"], ["Aprender — 02. Como jogar", "#aprender/02"], ["Aprender — 03. Riscos e consequências", "#aprender/03"], ["Aprender — 04. Dados e resultados", "#aprender/04"], ["Aprender — 05. Criando personagens", "#aprender/05"], ["Aprender — 06. Equipamentos e recursos", "#aprender/06"], ["Aprender — 07. Defesa e ferimentos", "#aprender/07"], ["Aprender — 08. Progressão", "#aprender/08"], ["Aprender — 09. Narrando 24xx", "#aprender/09"], ["Aprender — 10. Probabilidades e dados", "#aprender/10"], ["Perícias e Conjuntos de Perícias (Skillsets)", "#regras/personagens"], ["Talentos e habilidades especiais", "#regras/personagens"], ["Progressão e Talentos", "#regras/progressao"], ["Combate, adversários e monstros", "#aprender/09"], ["Dados e probabilidades", "#aprender/10"], ["Ferimentos e Defesa", "#regras/ferimentos"], ["Ajuda de aliados", "#regras/rolagens"], ["Rolador de dados", "#dados"], ["Variantes — 10 módulos", "#variantes"], ["Traços e Vocações", "#variantes/tracos-vocacoes"], ["Qualidades", "#variantes/qualidades"], ["Esforço Arriscado", "#variantes/esforco-arriscado"], ["Vínculos", "#variantes/vinculos"], ["Estresse Crescente", "#variantes/estresse-crescente"], ["Surpresas Preparadas", "#variantes/surpresas-preparadas"], ["Equipamento Retrospectivo", "#variantes/equipamento-retrospectivo"], ["Evolução por Sacrifício", "#variantes/evolucao-sacrificio"], ["Reagrupamento em Base", "#variantes/reagrupamento-base"], ["Adversários com Obstáculos", "#variantes/adversarios-obstaculos"], ["PDF e Biblioteca", "#biblioteca"]];
+const searchable=[["Regras Básicas", "#regras"], ["Como jogar", "#regras/como-jogar"], ["Rolagens", "#regras/rolagens"], ["Criando personagens", "#regras/personagens"], ["Equipamentos", "#regras/equipamentos"], ["Carga", "#regras/carga"], ["Defesa", "#regras/defesa"], ["Ferimentos", "#regras/ferimentos"], ["Progressão e recompensas", "#regras/progressao"], ["Narrador", "#regras/narrador"], ["Aprender — 01. O que é 24xx?", "#aprender/01"], ["Aprender — 02. Como jogar", "#aprender/02"], ["Aprender — 03. Riscos e consequências", "#aprender/03"], ["Aprender — 04. Dados e resultados", "#aprender/04"], ["Aprender — 05. Criando personagens", "#aprender/05"], ["Aprender — 06. Equipamentos e recursos", "#aprender/06"], ["Aprender — 07. Defesa e ferimentos", "#aprender/07"], ["Aprender — 08. Progressão", "#aprender/08"], ["Aprender — 09. Narrando 24xx", "#aprender/09"], ["Aprender — 10. Probabilidades e dados", "#aprender/10"], ["Perícias e Conjuntos de Perícias (Skillsets)", "#regras/personagens"], ["Talentos e habilidades especiais", "#regras/personagens"], ["Progressão e Talentos", "#regras/progressao"], ["Combate, adversários e monstros", "#aprender/09"], ["Dados e probabilidades", "#aprender/10"], ["Ferimentos e Defesa", "#regras/ferimentos"], ["Ajuda de aliados", "#regras/rolagens"], ["Rolador de dados", "#dados"], ["Oráculo — Tarô e Sim ou não", "#oraculo"], ["Variantes — 10 módulos", "#variantes"], ["Traços e Vocações", "#variantes/tracos-vocacoes"], ["Qualidades", "#variantes/qualidades"], ["Esforço Arriscado", "#variantes/esforco-arriscado"], ["Vínculos", "#variantes/vinculos"], ["Estresse Crescente", "#variantes/estresse-crescente"], ["Surpresas Preparadas", "#variantes/surpresas-preparadas"], ["Equipamento Retrospectivo", "#variantes/equipamento-retrospectivo"], ["Evolução por Sacrifício", "#variantes/evolucao-sacrificio"], ["Reagrupamento em Base", "#variantes/reagrupamento-base"], ["Adversários com Obstáculos", "#variantes/adversarios-obstaculos"], ["PDF e Biblioteca", "#biblioteca"]];
 let overlay=document.getElementById('searchOverlay'),searchInput=document.getElementById('searchInput'),searchResults=document.getElementById('searchResults');
 function renderSearch(){let term=searchInput.value.trim().toLocaleLowerCase('pt-BR'),hits=searchable.filter(a=>!term||a[0].toLocaleLowerCase('pt-BR').includes(term));searchResults.replaceChildren();if(!hits.length){let p=document.createElement('p');p.textContent='Nenhum resultado encontrado.';searchResults.append(p);return}hits.forEach(a=>{let b=document.createElement('button');b.type='button';b.className='search-item';b.dataset.go=a[1];b.textContent=a[0]+'  →';searchResults.append(b)})}
 function searchToggle(open){overlay.classList.toggle('open',open);if(open){renderSearch();searchInput.focus()}else{document.getElementById('openSearch').focus()}}
@@ -995,4 +1052,144 @@ function showVariant(slug){
  filterVariants('todos');m.open=true;
  requestAnimationFrame(()=>m.scrollIntoView({behavior:'instant',block:'start'}));
 }
+
+function iniciarOraculo() {
+  const porId = id => document.getElementById(id);
+  const modos = [...document.querySelectorAll('[data-oracle-mode]')];
+  const cartaBotao = porId('oracle-draw');
+  const desdobrarBotao = porId('oracle-follow');
+  const copiarCarta = porId('oracle-copy-card');
+  const copiarResposta = porId('oracle-copy-answer');
+  const cartaSaida = porId('oracle-card-live');
+  const respostaSaida = porId('oracle-answer-live');
+  const desdobramentoSaida = porId('oracle-follow-live');
+  const avisoCopia = porId('oracle-copy-status');
+  const chance = porId('oracle-chance');
+  const pergunta = porId('oracle-question');
+  const faixas = {
+    improvavel: [3, 12, 15, 16, 19, 20],
+    equilibrada: [2, 8, 10, 12, 18, 20],
+    provavel: [1, 4, 5, 8, 17, 20]
+  };
+  const respostas = [
+    ['Não, e…', 'A negativa se agrava ou acrescenta um obstáculo.'],
+    ['Não', 'A negativa se aplica diretamente.'],
+    ['Não, mas…', 'A negativa traz uma alternativa, uma brecha ou uma vantagem.'],
+    ['Sim, mas…', 'A afirmação traz um custo, uma condição ou uma dificuldade.'],
+    ['Sim', 'A afirmação se aplica diretamente.'],
+    ['Sim, e…', 'A afirmação traz uma vantagem ou oportunidade adicional.']
+  ];
+  let baralho;
+  let consulta = 0;
+
+  function carregarBaralho() {
+    if (!baralho) {
+      baralho = fetch('./assets/oraculo-cartas.json').then(async resposta => {
+        if (!resposta.ok) throw new Error('Baralho indisponível');
+        const cartas = await resposta.json();
+        if (!Array.isArray(cartas) || cartas.length !== 78) throw new Error('Baralho inválido');
+        return cartas;
+      }).catch(erro => {
+        baralho = undefined;
+        throw erro;
+      });
+    }
+    return baralho;
+  }
+
+  function elemento(tag, texto, classe) {
+    const el = document.createElement(tag);
+    el.textContent = texto;
+    if (classe) el.className = classe;
+    return el;
+  }
+
+  function mostrarCarta(saida, carta) {
+    const card = elemento('article', '', 'oracle-result');
+    const familia = carta.arcano === 'maior'
+      ? 'Arcano maior · ' + carta.valor
+      : carta.naipe.charAt(0).toUpperCase() + carta.naipe.slice(1);
+    card.append(
+      elemento('p', familia, 'eyebrow'),
+      elemento('h2', carta.nome),
+      elemento('p', carta.palavras.join(' · '), 'oracle-keywords'),
+      elemento('p', 'Em jogo: ' + carta.pergunta)
+    );
+    saida.replaceChildren(card);
+  }
+
+  async function tirarCarta(botao, saida, consultaAtual) {
+    if (botao.getAttribute('aria-disabled') === 'true') return;
+    const vigente = () => consultaAtual === undefined || consultaAtual === consulta;
+    avisoCopia.textContent = '';
+    botao.setAttribute('aria-disabled', 'true');
+    saida.textContent = 'Carregando cartas…';
+    if (consultaAtual === undefined) copiarCarta.hidden = true;
+    try {
+      const cartas = await carregarBaralho();
+      if (!vigente()) return;
+      mostrarCarta(saida, cartas[Math.floor(Math.random() * cartas.length)]);
+      botao.textContent = 'Tirar novamente';
+      if (consultaAtual === undefined) copiarCarta.hidden = false;
+    } catch {
+      if (!vigente()) return;
+      saida.textContent = 'Não foi possível carregar as cartas.';
+      botao.textContent = 'Tentar novamente';
+    } finally {
+      if (vigente()) botao.removeAttribute('aria-disabled');
+    }
+  }
+
+  modos.forEach(botao => botao.addEventListener('click', () => {
+    modos.forEach(modo => {
+      const ativo = modo === botao;
+      modo.setAttribute('aria-pressed', String(ativo));
+      modo.classList.toggle('ghost', !ativo);
+      porId(modo.getAttribute('aria-controls')).hidden = !ativo;
+    });
+    avisoCopia.textContent = '';
+  }));
+
+  cartaBotao.addEventListener('click', () => tirarCarta(cartaBotao, cartaSaida));
+  desdobrarBotao.addEventListener('click', () => tirarCarta(desdobrarBotao, desdobramentoSaida, consulta));
+
+  porId('oracle-form').addEventListener('submit', evento => {
+    evento.preventDefault();
+    consulta++;
+    const face = Math.floor(Math.random() * 20) + 1;
+    const indice = faixas[chance.value].findIndex(limite => face <= limite);
+    const [rotulo, leitura] = respostas[indice];
+    const card = elemento('article', '', 'oracle-result');
+    const textoPergunta = pergunta.value.trim();
+    if (textoPergunta) card.append(elemento('p', textoPergunta));
+    card.append(
+      elemento('h2', rotulo),
+      elemento('p', chance.selectedOptions[0].textContent + ' · ' + face + ' no d20', 'eyebrow'),
+      elemento('p', leitura)
+    );
+    respostaSaida.replaceChildren(card);
+    desdobramentoSaida.replaceChildren();
+    desdobrarBotao.textContent = 'Tirar carta para o desdobramento';
+    desdobrarBotao.removeAttribute('aria-disabled');
+    desdobrarBotao.hidden = indice === 1 || indice === 4;
+    copiarResposta.hidden = false;
+    avisoCopia.textContent = '';
+  });
+
+  function permitirCopia(botao, ...saidas) {
+    botao.addEventListener('click', async () => {
+      const texto = saidas.map(saida => saida.querySelector('article')?.innerText)
+        .filter(Boolean).join('\n\n');
+      try {
+        await navigator.clipboard.writeText(texto);
+        avisoCopia.textContent = 'Resultado copiado.';
+      } catch {
+        avisoCopia.textContent = 'Selecione o texto do resultado para copiá-lo.';
+      }
+    });
+  }
+  permitirCopia(copiarCarta, cartaSaida);
+  permitirCopia(copiarResposta, respostaSaida, desdobramentoSaida);
+}
+iniciarOraculo();
 </script></body></html>
