@@ -6,7 +6,7 @@ const sourceNames = {
   factions: 'Facção', missions: 'Objetivo de missão', 'miscellaneous-items': 'Objeto',
   treasures: 'Tesouro', tools: 'Ferramenta', clothing: 'Vestuário', weapons: 'Arma',
   powers: 'Poder', potions: 'Efeito de poção', 'male-names': 'Masculino',
-  'female-names': 'Feminino', 'wizard-names': 'Mago', qualities: 'Qualidade',
+  'female-names': 'Feminino', qualities: 'Qualidade',
   effects: 'Efeito', elements: 'Elemento', forms: 'Forma'
 };
 let loading;
@@ -184,7 +184,7 @@ function makeCard(data, card) {
 
   function rollFormula() {
     const chosen = formula.formulas[draw(formula.die) - 1];
-    formulaLabel = 'Fórmula d12 · ' + chosen.n + ' · ' + chosen.steps.map(step => sourceNames[step]).join(' → ');
+    formulaLabel = 'Fórmula d' + formula.die + ' · ' + chosen.n + ' · ' + chosen.steps.map(step => sourceNames[step]).join(' → ');
     formulaStatus.textContent = formulaLabel;
     components = chosen.steps.map(step => makeField(data, card.id, {
       id: step, label: sourceNames[step], options: [step], usage: 'initial'
