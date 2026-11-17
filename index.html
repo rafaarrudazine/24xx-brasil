@@ -227,12 +227,36 @@
 #oraculo .oracle-result p{margin:7px 0 0}
 #oraculo .oracle-keywords{font-weight:700}
 #oraculo #oracle-copy-status:empty{margin:0}
+#geradores [hidden]{display:none!important}
+#geradores .geradores-conteudo{padding:18px 0 42px}
+#geradores button{cursor:pointer}
+#geradores button:focus-visible,#geradores select:focus-visible,#geradores summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+#geradores .geradores-toolbar{margin:18px 0 15px}
+#geradores .geradores-toolbar p{margin:0 0 12px}
+#geradores .geradores-preparar summary{min-height:0}
+#geradores .geradores-preparar .variant-head{flex:1}
+#geradores .geradores-card summary{min-height:120px}
+#geradores .geradores-card[open] summary{min-height:0}
+#geradores .geradores-resultado:not(:empty){background:var(--shade);border-left:3px solid var(--ink);padding:10px 13px;margin:12px 0;overflow-wrap:anywhere}
+#geradores .geradores-tabela{border-collapse:collapse;width:100%;table-layout:fixed;margin-top:14px}
+#geradores .geradores-tabela th,#geradores .geradores-tabela td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:8px 6px;overflow-wrap:anywhere}
+#geradores .geradores-tabela thead th:first-child{width:3.25rem}
+#geradores .geradores-tabela .resultado-sorteado{background:var(--shade);box-shadow:inset 3px 0 var(--ink)}
+#geradores #geradores-lista{padding-bottom:20px}
+#geradores #geradores-sessao{display:flex;flex-wrap:wrap;align-items:end;gap:12px}
+#geradores #geradores-sessao>div{flex:1 1 240px;min-width:0}
+#geradores #geradores-sessao label{display:block;font-weight:700;margin-bottom:4px}
+#geradores #geradores-missao{width:100%;min-height:44px;border:1px solid var(--line);border-radius:3px;background:var(--paper);color:var(--ink);font:inherit;font-size:16px;padding:7px}
+#geradores #geradores-pecas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin-top:16px}
+#geradores .geradores-peca{min-width:0;border-top:2px solid var(--ink);padding:8px 0}
+#geradores .geradores-peca h3{margin:0}
+#geradores #geradores-status:empty{margin:0}
 </style>
 <link rel="icon" type="image/png" href="./assets/24xx_brasil_d6.png">
 <meta property="og:type" content="website"><meta property="og:title" content="24XX Brasil — Aprenda, jogue, crie."><meta property="og:description" content="Regras, variantes e fichas de personagem em português para jogar e criar com 24XX.">
 </head>
 <body>
-<header class="top"><div class="wrap top-in"><a class="brand" href="#inicio" aria-label="24XX Brasil, início"><img src="./assets/24xx_brasil_d6.png" alt="Carimbo original de dado d6"><span class="brand-name">24XX</span><span class="brand-small">BRASIL</span></a><nav class="nav" aria-label="Navegação principal"><a href="#inicio" data-nav="inicio">Início</a><a href="#regras" data-nav="regras">Regras</a><a href="#aprender" data-nav="aprender">Aprender</a><a href="#variantes" data-nav="variantes">Variantes</a><a href="#biblioteca" data-nav="biblioteca">Biblioteca</a><a href="#dados" data-nav="dados">Dados</a><a href="#oraculo" data-nav="oraculo">Oráculo</a></nav><button class="search-trigger" id="openSearch" aria-label="Pesquisar no site"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.7" cy="10.7" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5.3 5.3" stroke="currentColor" stroke-width="1.8" fill="none"/></svg><span class="search-label">Pesquisar</span><span class="key">/</span></button><button class="mobile-menu" id="mobileMenu" aria-expanded="false"><span>Menu</span><svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button></div><div class="mobile-nav" id="mobileNav"><a href="#inicio">Início</a><a href="#regras">Regras básicas</a><a href="#aprender">Aprender a jogar</a><a href="#variantes">Variantes</a><a href="#biblioteca">Biblioteca e PDFs</a><a href="#dados">Rolador de dados</a><a href="#oraculo" data-nav="oraculo">Oráculo</a></div></header>
+<header class="top"><div class="wrap top-in"><a class="brand" href="#inicio" aria-label="24XX Brasil, início"><img src="./assets/24xx_brasil_d6.png" alt="Carimbo original de dado d6"><span class="brand-name">24XX</span><span class="brand-small">BRASIL</span></a><nav class="nav" aria-label="Navegação principal"><a href="#inicio" data-nav="inicio">Início</a><a href="#regras" data-nav="regras">Regras</a><a href="#aprender" data-nav="aprender">Aprender</a><a href="#variantes" data-nav="variantes">Variantes</a><a href="#geradores" data-nav="geradores">Geradores</a><a href="#biblioteca" data-nav="biblioteca">Biblioteca</a><a href="#dados" data-nav="dados">Dados</a><a href="#oraculo" data-nav="oraculo">Oráculo</a></nav><button class="search-trigger" id="openSearch" aria-label="Pesquisar no site"><svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.7" cy="10.7" r="6.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m15.5 15.5 5.3 5.3" stroke="currentColor" stroke-width="1.8" fill="none"/></svg><span class="search-label">Pesquisar</span><span class="key">/</span></button><button class="mobile-menu" id="mobileMenu" aria-expanded="false"><span>Menu</span><svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button></div><div class="mobile-nav" id="mobileNav"><a href="#inicio">Início</a><a href="#regras">Regras básicas</a><a href="#aprender">Aprender a jogar</a><a href="#variantes">Variantes</a><a href="#geradores" data-nav="geradores">Geradores</a><a href="#biblioteca">Biblioteca e PDFs</a><a href="#dados">Rolador de dados</a><a href="#oraculo" data-nav="oraculo">Oráculo</a></div></header>
 <main>
 <section id="inicio" class="page active"><div class="wrap"><section class="hero"><div><div class="eyebrow">Referência de Sistema · RPG minimalista</div><h1><span>APRENDA.</span><span>JOGUE.</span><span>CRIE.</span></h1><p class="lead">Regras simples, possibilidades infinitas. Uma plataforma brasileira para explorar o sistema 24XX, experimentar variantes e construir seus próprios mundos.</p><div class="actions"><a class="btn" href="#regras">Começar pelas regras <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/></svg></a><a class="btn ghost" href="#aprender">Aprender a jogar <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" stroke-linejoin="miter"/></svg></a></div><p class="micro" style="margin-top:22px">PROJETO INDEPENDENTE · BASEADO EM 24XX DE JASON TOCCI</p></div><div class="hero-art"><img src="./assets/24xx_brasil_d6.png" alt="Emblema original de dado de seis faces em estilo de carimbo"></div></section>
 <section class="section"><div class="section-head"><div><span class="eyebrow">01 / Explore</span><h2>UM SISTEMA, MUITAS PORTAS.</h2></div><span class="micro">Escolha por onde começar ↓</span></div><div class="cards"><a class="tile" href="#aprender"><span class="nr">01 — APRENDER</span><h3>Aprenda a jogar</h3><p>Entenda ações, riscos, dados e resultados. Sem precisar conhecer nenhum cenário.</p><span class="arr"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></a><a class="tile" href="#regras"><span class="nr">02 — REFERÊNCIA</span><h3>Consulte as regras</h3><p>Uma referência direta e autossuficiente para criar personagens, resolver riscos e começar a jogar.</p><span class="arr"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></a><a class="tile" href="#variantes"><span class="nr">03 — EXPERIMENTAÇÃO</span><h3>Explore variantes</h3><p>Regras opcionais e modulares para combinar e adaptar. Curadoria em preparação.</p><span class="arr"><svg class="arrow-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M8 5h11v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="square" stroke-linejoin="miter"/></svg></span></a></div></section>
@@ -997,7 +1021,50 @@
 <p>Esta variante <strong>substitui o avanço automático após trabalhos</strong>. A mesa decide como tratar recompensas materiais, que não precisam desaparecer.</p><h4>EXEMPLO</h4><div class="variant-example"><p>Um explorador rola <strong>d8 de Vocação</strong> e obtém 8. Transforma esse 8 em <strong>1</strong> para adquirir o Traço <em>Persistente</em>. Se não havia outro dado, o resultado passa a ser Desastre; se havia ajuda, ela ainda poderá evitar o pior.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Preferencialmente com Traços e Vocações (módulo 01)</strong>. Esta versão editorial delimita o gatilho a um dado de Traço ou Vocação, não a qualquer dado de ajuda, para evitar interações imprevistas com Qualidades, Vínculos ou Estresse. Não acumule avanço automático por trabalho sem decisão expressa da mesa.</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Xot v1.2</span> (p. 2).<span class="variant-id">Estudo: VB-020</span></div></div></details><details class="variant-module" id="v-reagrupamento-base" data-vcategory="exploracao"><summary><span class="variant-number">09</span><span class="variant-head"><span class="variant-category">Exploração · Complementar</span><span class="variant-name">Reagrupamento em Base</span><span class="variant-teaser">Recupere-se num refúgio seguro enquanto as ameaças continuam agindo.</span></span><span class="variant-toggle" aria-hidden="true">+</span></summary><div class="variant-body"><p>Uma pausa pode recuperar o grupo, mas costuma custar tempo e oportunidades.</p><h4>COMO USAR</h4><p>Quando os personagens alcançam uma <strong>base segura</strong>, narrem uma cena de reagrupamento. Descrevam quem presta cuidados, que suprimentos consomem e quais preparativos fazem. <strong>Removam impedimentos de ferimentos efetivamente tratados</strong>, respeitando a gravidade e a disponibilidade de cuidados na ficção.</p>
 <p>Em seguida, o Narrador <strong>faz avançar uma situação externa já estabelecida</strong>: um rival chega primeiro, a chuva bloqueia a rota ou alguém muda de posição. Não é necessário rolar, a menos que a incerteza produza uma escolha interessante.</p><h4>EXEMPLO</h4><div class="variant-example"><p>O grupo volta ao abrigo para tratar uma fratura e repor ferramentas. Quando sai novamente, encontra o caminho principal bloqueado pelos guardas que estavam sendo mobilizados.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Complementa</strong> as regras abertas de Ferimentos e recuperação do SRD. Não concede cura imediata em qualquer lugar e não obriga o Narrador a punir toda pausa: o custo deve corresponder à situação já apresentada.</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Junior Hybrid Battle Cryptids v1.0</span> (pp. 2–3).<span class="variant-id">Estudo: VB-030</span></div></div></details><details class="variant-module" id="v-adversarios-obstaculos" data-vcategory="confrontos"><summary><span class="variant-number">10</span><span class="variant-head"><span class="variant-category">Confrontos · Modelo de encontro</span><span class="variant-name">Adversários com Obstáculos</span><span class="variant-teaser">Construa inimigos que exigem superar condições ficcionais antes da ação decisiva.</span></span><span class="variant-toggle" aria-hidden="true">+</span></summary><div class="variant-body"><p>Um inimigo memorável não precisa de Pontos de Vida. Às vezes, o desafio é descobrir <strong>como torná-lo vulnerável</strong>.</p><h4>COMO USAR</h4><p>Ao criar um adversário excepcional, defina <strong>duas ou três condições ficcionais</strong> que impedem derrotá-lo de imediato: uma proteção, uma vantagem de posição, uma fonte de energia ou um aliado que o mantém seguro.</p>
 <p>Apresente pistas perceptíveis dessas condições. Os jogadores podem investigar, contornar ou neutralizar cada obstáculo por diferentes meios. <strong>Role apenas quando uma ação apresentar risco</strong>, respeitando o núcleo 24XX. Quando a ficção permitir, o grupo poderá tentar a ação decisiva; isso não exige automaticamente um número fixo de rodadas ou rolagens.</p>
-<p>Os obstáculos não são uma barra de vida. Soluções criativas podem eliminar várias condições de uma só vez, se fizerem sentido.</p><h4>EXEMPLO</h4><div class="variant-example"><p>Um autômato invulnerável recebe energia de <strong>dois cabos expostos</strong> e luta protegido por uma <strong>porta de ferro giratória</strong>. Os personagens podem cortar a energia, mudar sua posição ou provocar uma sobrecarga em vez de apenas atacar repetidamente.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Modelo opcional de preparação</strong>, não substitui a resolução de riscos do SRD. A quantidade de duas ou três condições é uma <strong>proposta do 24XX Brasil</strong>, inspirada em um encontro específico de <em>Orbital Decay</em> e em conselhos gerais dos demais jogos.</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Orbital Decay v1.6</span> (pp. 2 e 4) <span class="variant-source-title">2400 Battle Moon v1.1</span> (p. 2–3) <span class="variant-source-title">2400 Emergency Rules v1.3</span> (pp. 2–3).<span class="variant-id">Estudo: VB-019</span></div></div></details></div><div class="variant-how" id="variantUsageTips"><div><strong>COMO CONSULTAR</strong><p>Selecione uma categoria e abra um módulo para ler a regra, um exemplo e sua compatibilidade.</p></div><div><strong>COMO COMBINAR</strong><p>Não presuma que dados extras ou progressões se acumulam. Consulte a nota de cada módulo e combine os procedimentos antes da sessão.</p></div></div><div class="note">// Regras opcionais e adaptações editoriais do 24XX Brasil, inspiradas em mecânicas documentadas nos jogos <em>2400</em>. Não são regras oficiais de Jason Tocci.</div><section class="variant-outro"><span class="eyebrow">Fontes e critérios</span><h2>REGRAS COM ORIGEM IDENTIFICADA.</h2><p>As variantes são reinterpretações e propostas editoriais do 24XX Brasil. As fontes individuais são citadas em cada módulo. O núcleo 24XX e sua licença são apresentados em <a href="#biblioteca">Biblioteca</a>; a autoria dos jogos originais pertence a seus respectivos criadores.</p><p>Antes de adotar um módulo, combine o alcance das competências, as formas de ajuda e o método de progressão. Em caso de conflito, dê preferência a uma regra simples e acordada entre as pessoas da mesa.</p></section></div></section><section id="biblioteca" class="page"><div class="wrap"><header class="page-title"><div class="eyebrow">Acervo · Material gratuito</div><h1>BIBLIOTECA.</h1><p class="lead">Baixe fichas de personagem e a edição brasileira do documento de referência.</p></header><section class="section library-sheets" aria-labelledby="fichas-heading"><div class="section-head"><div><span class="eyebrow">Material de jogo · Português brasileiro</span><h2 id="fichas-heading">FICHAS DE PERSONAGEM.</h2></div></div><p>Duas fichas de personagem do 24XX Brasil em português: uma versão A4 horizontal, com espaço para companheiros, notas e design de personagem, e outra versão A5 compacta. Escolha o formato mais adequado à sua mesa.</p><div class="download-list"><a class="download" href="./assets/24xx_brasil_ficha_a4_horizontal_v1.2.pdf" target="_blank" rel="noopener noreferrer"><div class="file">PDF / A4 HORIZONTAL / 1 PÁGINA</div><h3>Ficha A4 horizontal</h3><p>Ficha em página ampla, com campos para Perícias, companheiros, design de personagem e anotações.</p><strong>Visualizar ficha ↗</strong></a><a class="download" href="./assets/24xx_brasil_ficha_a5_v2.1.pdf" target="_blank" rel="noopener noreferrer"><div class="file">PDF / A5 / 1 PÁGINA</div><h3>Ficha A5</h3><p>Versão compacta para imprimir ou levar à mesa, com os principais campos do personagem.</p><strong>Visualizar ficha ↗</strong></a></div><p class="micro" style="margin-top:14px">FICHAS AUTORAIS DO 24XX BRASIL · NÃO SÃO FICHAS OFICIAIS DE JASON TOCCI.</p></section><section class="section"><div class="section-head"><div><span class="eyebrow">Documento de referência do sistema</span><h2>24XX SRD — EDIÇÃO BRASILEIRA.</h2></div></div><p>Tradução independente do 24XX SRD v1.41 de Jason Tocci, organizada e revisada por Rafael Arruda. Mantém os exemplos de ficção científica do documento original.</p><div class="download-list"><a class="download" href="./assets/24xx_srd_ptbr_A5.pdf" target="_blank" rel="noopener noreferrer"><span class="file">PDF / A5 / 4 PÁGINAS</span><h3>Ler e imprimir</h3><p>Edição em páginas individuais, ideal para leitura e impressão.</p><strong>Ler PDF ↗</strong></a><a class="download" href="./assets/24xx_srd_ptbr_livreto_A4.pdf" target="_blank" rel="noopener noreferrer"><span class="file">PDF / A4 / FRENTE E VERSO</span><h3>Montar livreto</h3><p>Folha A4 em paisagem para dobrar ao meio depois de imprimir.</p><strong>Visualizar livreto ↗</strong></a></div><hr class="divider"><h3>Referência, crédito e licença</h3><p>O texto original é de <a href="https://jasontocci.itch.io/24xx" target="_blank" rel="noopener noreferrer">Jason Tocci</a>, sob <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Esta iniciativa é independente e não é endossada pelo autor. Materiais autorais serão identificados separadamente.</p></section></div></section>
+<p>Os obstáculos não são uma barra de vida. Soluções criativas podem eliminar várias condições de uma só vez, se fizerem sentido.</p><h4>EXEMPLO</h4><div class="variant-example"><p>Um autômato invulnerável recebe energia de <strong>dois cabos expostos</strong> e luta protegido por uma <strong>porta de ferro giratória</strong>. Os personagens podem cortar a energia, mudar sua posição ou provocar uma sobrecarga em vez de apenas atacar repetidamente.</p></div><h4>COMPATIBILIDADE</h4><p><strong>Modelo opcional de preparação</strong>, não substitui a resolução de riscos do SRD. A quantidade de duas ou três condições é uma <strong>proposta do 24XX Brasil</strong>, inspirada em um encontro específico de <em>Orbital Decay</em> e em conselhos gerais dos demais jogos.</p><div class="variant-source"><strong>Inspiração mecânica:</strong> <span class="variant-source-title">2400 Orbital Decay v1.6</span> (pp. 2 e 4) <span class="variant-source-title">2400 Battle Moon v1.1</span> (p. 2–3) <span class="variant-source-title">2400 Emergency Rules v1.3</span> (pp. 2–3).<span class="variant-id">Estudo: VB-019</span></div></div></details></div><div class="variant-how" id="variantUsageTips"><div><strong>COMO CONSULTAR</strong><p>Selecione uma categoria e abra um módulo para ler a regra, um exemplo e sua compatibilidade.</p></div><div><strong>COMO COMBINAR</strong><p>Não presuma que dados extras ou progressões se acumulam. Consulte a nota de cada módulo e combine os procedimentos antes da sessão.</p></div></div><div class="note">// Regras opcionais e adaptações editoriais do 24XX Brasil, inspiradas em mecânicas documentadas nos jogos <em>2400</em>. Não são regras oficiais de Jason Tocci.</div><section class="variant-outro"><span class="eyebrow">Fontes e critérios</span><h2>REGRAS COM ORIGEM IDENTIFICADA.</h2><p>As variantes são reinterpretações e propostas editoriais do 24XX Brasil. As fontes individuais são citadas em cada módulo. O núcleo 24XX e sua licença são apresentados em <a href="#biblioteca">Biblioteca</a>; a autoria dos jogos originais pertence a seus respectivos criadores.</p><p>Antes de adotar um módulo, combine o alcance das competências, as formas de ajuda e o método de progressão. Em caso de conflito, dê preferência a uma regra simples e acordada entre as pessoas da mesa.</p></section></div></section><section id="geradores" class="page" aria-labelledby="geradores-title">
+  <div class="wrap">
+    <header class="page-title">
+      <h1 id="geradores-title" tabindex="-1">GERADORES D20.</h1>
+      <p class="lead">Role um d20 para começar uma missão ou encontrar o próximo detalhe da sua cena.</p>
+    </header>
+    <div class="geradores-conteudo">
+      <p id="geradores-status" role="status"></p>
+      <button id="geradores-retry" class="btn ghost" type="button" hidden>Tentar novamente</button>
+      <div id="geradores-catalogo" hidden>
+        <details class="variant-module geradores-preparar">
+          <summary>
+            <span class="variant-head">
+              <span class="variant-name">Preparar sessão</span>
+              <span class="variant-teaser">Combine uma missão, uma pessoa e um local.</span>
+            </span>
+            <span class="variant-toggle" aria-hidden="true">+</span>
+          </summary>
+          <div class="variant-body">
+            <form id="geradores-sessao">
+              <div>
+                <label for="geradores-missao">Tabela de missão</label>
+                <select id="geradores-missao"></select>
+              </div>
+              <button class="btn" type="submit">Gerar sessão</button>
+            </form>
+            <div id="geradores-pecas" hidden></div>
+          </div>
+        </details>
+        <div class="geradores-toolbar">
+          <p>Escolha uma tabela e clique em <strong>Rolar d20</strong>, ou encontre na tabela o resultado do seu dado.</p>
+          <div class="variant-filters" role="group" aria-label="Filtrar tabelas">
+            <button class="variant-filter" type="button" data-geradores-filtro="todas" aria-pressed="true">Todas</button>
+            <button class="variant-filter" type="button" data-geradores-filtro="missao" aria-pressed="false">Missões</button>
+            <button class="variant-filter" type="button" data-geradores-filtro="apoio" aria-pressed="false">Apoio</button>
+          </div>
+        </div>
+        <div id="geradores-lista" class="variant-list"></div>
+        <p class="note geradores-credito">Tabelas autorais do 24XX Brasil. Design inspirado na <a href="https://jasontocci.itch.io/2400">série 2400, de Jason Tocci</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="biblioteca" class="page"><div class="wrap"><header class="page-title"><div class="eyebrow">Acervo · Material gratuito</div><h1>BIBLIOTECA.</h1><p class="lead">Baixe fichas de personagem e a edição brasileira do documento de referência.</p></header><section class="section library-sheets" aria-labelledby="fichas-heading"><div class="section-head"><div><span class="eyebrow">Material de jogo · Português brasileiro</span><h2 id="fichas-heading">FICHAS DE PERSONAGEM.</h2></div></div><p>Duas fichas de personagem do 24XX Brasil em português: uma versão A4 horizontal, com espaço para companheiros, notas e design de personagem, e outra versão A5 compacta. Escolha o formato mais adequado à sua mesa.</p><div class="download-list"><a class="download" href="./assets/24xx_brasil_ficha_a4_horizontal_v1.2.pdf" target="_blank" rel="noopener noreferrer"><div class="file">PDF / A4 HORIZONTAL / 1 PÁGINA</div><h3>Ficha A4 horizontal</h3><p>Ficha em página ampla, com campos para Perícias, companheiros, design de personagem e anotações.</p><strong>Visualizar ficha ↗</strong></a><a class="download" href="./assets/24xx_brasil_ficha_a5_v2.1.pdf" target="_blank" rel="noopener noreferrer"><div class="file">PDF / A5 / 1 PÁGINA</div><h3>Ficha A5</h3><p>Versão compacta para imprimir ou levar à mesa, com os principais campos do personagem.</p><strong>Visualizar ficha ↗</strong></a></div><p class="micro" style="margin-top:14px">FICHAS AUTORAIS DO 24XX BRASIL · NÃO SÃO FICHAS OFICIAIS DE JASON TOCCI.</p></section><section class="section"><div class="section-head"><div><span class="eyebrow">Documento de referência do sistema</span><h2>24XX SRD — EDIÇÃO BRASILEIRA.</h2></div></div><p>Tradução independente do 24XX SRD v1.41 de Jason Tocci, organizada e revisada por Rafael Arruda. Mantém os exemplos de ficção científica do documento original.</p><div class="download-list"><a class="download" href="./assets/24xx_srd_ptbr_A5.pdf" target="_blank" rel="noopener noreferrer"><span class="file">PDF / A5 / 4 PÁGINAS</span><h3>Ler e imprimir</h3><p>Edição em páginas individuais, ideal para leitura e impressão.</p><strong>Ler PDF ↗</strong></a><a class="download" href="./assets/24xx_srd_ptbr_livreto_A4.pdf" target="_blank" rel="noopener noreferrer"><span class="file">PDF / A4 / FRENTE E VERSO</span><h3>Montar livreto</h3><p>Folha A4 em paisagem para dobrar ao meio depois de imprimir.</p><strong>Visualizar livreto ↗</strong></a></div><hr class="divider"><h3>Referência, crédito e licença</h3><p>O texto original é de <a href="https://jasontocci.itch.io/24xx" target="_blank" rel="noopener noreferrer">Jason Tocci</a>, sob <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Esta iniciativa é independente e não é endossada pelo autor. Materiais autorais serão identificados separadamente.</p></section></div></section>
 </main>
 <footer class="footer"><div class="wrap"><div><strong style="font-size:17px;color:var(--ink)">24XX BRASIL</strong><div><a href="#regras">Regras</a> · <a href="#aprender">Aprender</a> · <a href="#dados">Dados</a> · <a href="#biblioteca">Biblioteca</a></div><div class="tiny" style="margin-top:9px">24XX BRASIL · EDIÇÃO DIGITAL</div></div><div><div>Projeto independente · Rafael Arruda</div><div><a href="https://rafaarruda.itch.io/" target="_blank" rel="noopener noreferrer">rafaarruda.itch.io</a> · <span class="email-plain">rafaarruda.zine@gmail.com</span></div><div>24XX SRD: <a href="https://jasontocci.itch.io/24xx" target="_blank" rel="noopener noreferrer">Jason Tocci</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></div></div></div></footer>
 <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Pesquisar conteúdo"><div class="search-box"><div style="display:flex;justify-content:space-between;align-items:center"><strong>PESQUISAR NO 24XX BRASIL</strong><button id="closeSearch" class="tab search-close-button" type="button" aria-label="Fechar busca"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M5 5L19 19M19 5L5 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div><input id="searchInput" placeholder="Digite: rolagens, medo, personagens..." autocomplete="off"><div id="searchResults" aria-live="polite"></div><p class="micro" style="margin:15px 0 0">RESULTADOS LIMITADOS AO CONTEÚDO DESTE SITE</p></div></div>
@@ -1009,13 +1076,188 @@ const ruleSlugs=["como-jogar", "rolagens", "personagens", "equipamentos", "carga
 let activeChapter='01',activeDie=6;
 function showChapter(num){if(!chapters.some(c=>c.num===num))num='01';activeChapter=num;document.querySelectorAll('[data-chapter]').forEach(e=>{const yes=e.dataset.chapter===num;e.hidden=!yes;e.classList.toggle('show',yes)});document.querySelectorAll('[data-chapter-link]').forEach(a=>{let yes=a.dataset.chapterLink===num;a.classList.toggle('sel',yes);if(yes)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});document.getElementById('chapterSelect').value=num;}
 function updateRulesNav(slug){document.querySelectorAll('.rules-toc a').forEach(a=>{let yes=a.getAttribute('href')==='#regras/'+slug;a.classList.toggle('sel',yes);if(yes)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});}
+function iniciarGeradores() {
+  const porId = id => document.getElementById(id);
+  const status = porId('geradores-status');
+  const tentar = porId('geradores-retry');
+  const lista = porId('geradores-lista');
+  const seletor = porId('geradores-missao');
+  const pecas = porId('geradores-pecas');
+  const filtros = [...document.querySelectorAll('[data-geradores-filtro]')];
+  const cards = new Map();
+  let carregamento;
+  let filtro = 'todas';
+
+  function montar(tag, texto = '', classe = '') {
+    const el = document.createElement(tag);
+    el.textContent = texto;
+    if (classe) el.className = classe;
+    return el;
+  }
+
+  function rolar({ dado, entradas }) {
+    return entradas[Math.floor(Math.random() * dado)];
+  }
+
+  function filtrar(tipo) {
+    filtro = tipo;
+    for (const { tabela, card } of cards.values()) {
+      card.hidden = tipo !== 'todas' && tabela.tipo !== tipo;
+    }
+    for (const botao of filtros) {
+      botao.setAttribute('aria-pressed', String(botao.dataset.geradoresFiltro === tipo));
+    }
+    status.textContent = '';
+  }
+
+  function montarCard(tabela) {
+    const card = montar('details', '', 'variant-module geradores-card');
+    card.id = 'g-' + tabela.id;
+    const resumo = montar('summary');
+    const rotulo = montar('span', '', 'variant-head');
+    rotulo.append(
+      montar('span', tabela.tema, 'variant-category'),
+      montar('span', tabela.titulo, 'variant-name'),
+      montar('span', tabela.descricao, 'variant-teaser')
+    );
+    const marcador = montar('span', '+', 'variant-toggle');
+    marcador.setAttribute('aria-hidden', 'true');
+    resumo.append(rotulo, marcador);
+    const corpo = montar('div', '', 'variant-body');
+    const botao = montar('button', 'Rolar d20', 'btn');
+    botao.type = 'button';
+    const resultado = montar('p', '', 'geradores-resultado');
+    resultado.setAttribute('role', 'status');
+
+    const tabelaEl = montar('table', '', 'geradores-tabela');
+    tabelaEl.setAttribute('aria-label', tabela.titulo);
+    const cabecalho = tabelaEl.createTHead().insertRow();
+    for (const texto of ['d20', 'Resultado']) {
+      const th = montar('th', texto);
+      th.scope = 'col';
+      cabecalho.append(th);
+    }
+    const linhas = new Map();
+    const tbody = tabelaEl.createTBody();
+    for (const entrada of tabela.entradas) {
+      const linha = tbody.insertRow();
+      const face = montar('th', String(entrada.roll));
+      face.scope = 'row';
+      linha.append(face, montar('td', entrada.texto));
+      linhas.set(entrada.roll, linha);
+    }
+    let destaque;
+    botao.addEventListener('click', () => {
+      const entrada = rolar(tabela);
+      destaque?.classList.remove('resultado-sorteado');
+      destaque = linhas.get(entrada.roll);
+      destaque.classList.add('resultado-sorteado');
+      resultado.replaceChildren(montar('strong', entrada.roll + ' no d20'), document.createTextNode(' · ' + entrada.texto));
+    });
+    corpo.append(botao, resultado, tabelaEl);
+    card.append(resumo, corpo);
+    return card;
+  }
+
+  function montarPeca(tabela, titulo, acao) {
+    const peca = montar('article', '', 'geradores-peca');
+    const resultado = montar('p', '', 'geradores-resultado');
+    resultado.setAttribute('role', 'status');
+    const botao = montar('button', acao, 'btn ghost');
+    botao.type = 'button';
+    function atualizar() {
+      const entrada = rolar(tabela);
+      resultado.replaceChildren(
+        montar('strong', entrada.roll + ' no d20'),
+        document.createTextNode(' · ' + entrada.texto)
+      );
+    }
+    botao.addEventListener('click', atualizar);
+    atualizar();
+    peca.append(montar('h3', titulo), montar('p', tabela.titulo), resultado, botao);
+    return peca;
+  }
+
+  porId('geradores-sessao').addEventListener('submit', evento => {
+    evento.preventDefault();
+    pecas.replaceChildren(
+      montarPeca(cards.get(seletor.value).tabela, 'Missão ou caso', 'Rolar missão novamente'),
+      montarPeca(cards.get('pessoas').tabela, 'Pessoa', 'Rolar pessoa novamente'),
+      montarPeca(cards.get('locais').tabela, 'Local', 'Rolar local novamente')
+    );
+    pecas.hidden = false;
+  });
+  for (const botao of filtros) {
+    botao.addEventListener('click', () => filtrar(botao.dataset.geradoresFiltro));
+  }
+
+  function carregar() {
+    if (carregamento) return carregamento;
+    status.textContent = 'Carregando tabelas…';
+    tentar.setAttribute('aria-disabled', 'true');
+    carregamento = fetch('./assets/geradores-d20.json').then(async resposta => {
+      if (!resposta.ok) throw new Error('Catálogo indisponível');
+      const tabelas = await resposta.json();
+      if (!Array.isArray(tabelas) || !tabelas.some(t => t.tipo === 'missao') ||
+          !['locais', 'pessoas'].every(id => tabelas.some(t => t.id === id)) ||
+          !tabelas.every(t => t.dado === 20 && Array.isArray(t.entradas) && t.entradas.length === t.dado)) {
+        throw new Error('Catálogo inválido');
+      }
+      const novosCards = tabelas.map(tabela => ({ tabela, card: montarCard(tabela) }));
+      for (const item of novosCards) {
+        const { tabela, card } = item;
+        cards.set(tabela.id, item);
+        lista.append(card);
+        if (tabela.tipo === 'missao') {
+          const opcao = montar('option', tabela.titulo);
+          opcao.value = tabela.id;
+          seletor.append(opcao);
+        }
+      }
+      porId('geradores-catalogo').hidden = false;
+      if (document.activeElement === tentar) porId('geradores-title').focus();
+      tentar.hidden = true;
+      filtrar('todas');
+    }).catch(erro => {
+      carregamento = undefined;
+      status.textContent = 'Não foi possível carregar as tabelas.';
+      tentar.hidden = false;
+      throw erro;
+    }).finally(() => tentar.removeAttribute('aria-disabled'));
+    return carregamento;
+  }
+
+  async function abrir(id) {
+    const rota = location.hash;
+    try {
+      await carregar();
+    } catch {
+      return;
+    }
+    const alvo = cards.get(id);
+    if (location.hash !== rota || !alvo) return;
+    if (filtro !== 'todas' && filtro !== alvo.tabela.tipo) filtrar('todas');
+    alvo.card.open = true;
+    requestAnimationFrame(() => {
+      if (location.hash === rota) alvo.card.scrollIntoView({ block: 'start', behavior: 'instant' });
+    });
+  }
+
+  tentar.addEventListener('click', () => {
+    if (tentar.getAttribute('aria-disabled') !== 'true') abrir(location.hash.split('/')[1]);
+  });
+  return abrir;
+}
+
+const abrirGeradores = iniciarGeradores();
 function route(){let hash=(location.hash||'#inicio').slice(1);let [id,sub]=hash.split('/');let page=document.getElementById(id);if(!page||!page.classList.contains('page'))id='inicio';document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('[data-nav]').forEach(a=>a.classList.toggle('active',a.dataset.nav===id));document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileMenu').setAttribute('aria-expanded','false');
  if(id==='aprender'){showChapter(sub||activeChapter)}
  if(id==='regras')updateRulesNav(sub||'como-jogar');
- const title={'inicio':'24XX Brasil','regras':'Regras Básicas','aprender':'Aprender','dados':'Rolador de Dados','oraculo':'Oráculo','variantes':'Variantes','biblioteca':'Biblioteca'};
+ const title={'inicio':'24XX Brasil','regras':'Regras Básicas','aprender':'Aprender','dados':'Rolador de Dados','oraculo':'Oráculo','variantes':'Variantes','geradores':'Geradores d20','biblioteca':'Biblioteca'};
  document.title=id==='inicio'?'24XX Brasil — Aprenda, jogue, crie.':title[id]+' — 24XX Brasil';
  if(id==='regras'&&ruleSlugs.includes(sub)){requestAnimationFrame(()=>{let target=document.getElementById('r-'+sub);if(target)target.scrollIntoView({behavior:'instant',block:'start'})})}
  else if(id==='variantes'&&sub&&document.getElementById('v-'+sub)){showVariant(sub)}
+ else if(id==='geradores'){window.scrollTo({top:0,behavior:'instant'});abrirGeradores(sub)}
  else window.scrollTo({top:0,behavior:'instant'});
 }
 window.addEventListener('hashchange',route);
@@ -1027,7 +1269,7 @@ function setDie(n){activeDie=n;document.querySelectorAll('[data-die]').forEach(b
 document.querySelector('.dice-pick').addEventListener('click',e=>{let b=e.target.closest('[data-die]');if(b)setDie(Number(b.dataset.die))});
 document.getElementById('diceRoll').addEventListener('click',()=>{let r=randomInt(activeDie),label=activeDie===20?'Resultado para tabela':r<=2?'Desastre':r<=4?'Revés':'Sucesso';document.getElementById('diceResult').textContent=r;document.getElementById('diceLabel').textContent='d'+activeDie+' · '+label});
 document.getElementById('diceClear').addEventListener('click',()=>setDie(activeDie));
-const searchable=[["Regras Básicas", "#regras"], ["Como jogar", "#regras/como-jogar"], ["Rolagens", "#regras/rolagens"], ["Criando personagens", "#regras/personagens"], ["Equipamentos", "#regras/equipamentos"], ["Carga", "#regras/carga"], ["Defesa", "#regras/defesa"], ["Ferimentos", "#regras/ferimentos"], ["Progressão e recompensas", "#regras/progressao"], ["Narrador", "#regras/narrador"], ["Aprender — 01. O que é 24xx?", "#aprender/01"], ["Aprender — 02. Como jogar", "#aprender/02"], ["Aprender — 03. Riscos e consequências", "#aprender/03"], ["Aprender — 04. Dados e resultados", "#aprender/04"], ["Aprender — 05. Criando personagens", "#aprender/05"], ["Aprender — 06. Equipamentos e recursos", "#aprender/06"], ["Aprender — 07. Defesa e ferimentos", "#aprender/07"], ["Aprender — 08. Progressão", "#aprender/08"], ["Aprender — 09. Narrando 24xx", "#aprender/09"], ["Aprender — 10. Probabilidades e dados", "#aprender/10"], ["Perícias e Conjuntos de Perícias (Skillsets)", "#regras/personagens"], ["Talentos e habilidades especiais", "#regras/personagens"], ["Progressão e Talentos", "#regras/progressao"], ["Combate, adversários e monstros", "#aprender/09"], ["Dados e probabilidades", "#aprender/10"], ["Ferimentos e Defesa", "#regras/ferimentos"], ["Ajuda de aliados", "#regras/rolagens"], ["Rolador de dados", "#dados"], ["Oráculo — Tarô e Sim ou não", "#oraculo"], ["Variantes — 10 módulos", "#variantes"], ["Traços e Vocações", "#variantes/tracos-vocacoes"], ["Qualidades", "#variantes/qualidades"], ["Esforço Arriscado", "#variantes/esforco-arriscado"], ["Vínculos", "#variantes/vinculos"], ["Estresse Crescente", "#variantes/estresse-crescente"], ["Surpresas Preparadas", "#variantes/surpresas-preparadas"], ["Equipamento Retrospectivo", "#variantes/equipamento-retrospectivo"], ["Evolução por Sacrifício", "#variantes/evolucao-sacrificio"], ["Reagrupamento em Base", "#variantes/reagrupamento-base"], ["Adversários com Obstáculos", "#variantes/adversarios-obstaculos"], ["PDF e Biblioteca", "#biblioteca"]];
+const searchable=[["Geradores d20", "#geradores"], ["Missões de fantasia", "#geradores/fantasia"], ["Trabalhos no espaço", "#geradores/espaco"], ["Ficção científica de campo", "#geradores/ficcao-cientifica"], ["Missões de horror", "#geradores/horror"], ["Casos de investigação", "#geradores/investigacao"], ["Golpes e infiltrações", "#geradores/golpes"], ["Trabalhos cyberpunk", "#geradores/cyberpunk"], ["Missões pós-apocalípticas", "#geradores/pos-apocalipse"], ["Complicações em jogo", "#geradores/complicacoes"], ["Pessoas com algo em jogo", "#geradores/pessoas"], ["Locais para cenas", "#geradores/locais"], ["Vestígios e achados", "#geradores/achados"], ["Exploração — o que há adiante?", "#geradores/exploracao"], ["Ameaças — o que ela faz e como abrir uma brecha?", "#geradores/ameacas"], ["Facções — o que querem agora?", "#geradores/faccoes"], ["Depois da missão — o que mudou?", "#geradores/depois-da-missao"], ["Regras Básicas", "#regras"], ["Como jogar", "#regras/como-jogar"], ["Rolagens", "#regras/rolagens"], ["Criando personagens", "#regras/personagens"], ["Equipamentos", "#regras/equipamentos"], ["Carga", "#regras/carga"], ["Defesa", "#regras/defesa"], ["Ferimentos", "#regras/ferimentos"], ["Progressão e recompensas", "#regras/progressao"], ["Narrador", "#regras/narrador"], ["Aprender — 01. O que é 24xx?", "#aprender/01"], ["Aprender — 02. Como jogar", "#aprender/02"], ["Aprender — 03. Riscos e consequências", "#aprender/03"], ["Aprender — 04. Dados e resultados", "#aprender/04"], ["Aprender — 05. Criando personagens", "#aprender/05"], ["Aprender — 06. Equipamentos e recursos", "#aprender/06"], ["Aprender — 07. Defesa e ferimentos", "#aprender/07"], ["Aprender — 08. Progressão", "#aprender/08"], ["Aprender — 09. Narrando 24xx", "#aprender/09"], ["Aprender — 10. Probabilidades e dados", "#aprender/10"], ["Perícias e Conjuntos de Perícias (Skillsets)", "#regras/personagens"], ["Talentos e habilidades especiais", "#regras/personagens"], ["Progressão e Talentos", "#regras/progressao"], ["Combate, adversários e monstros", "#aprender/09"], ["Dados e probabilidades", "#aprender/10"], ["Ferimentos e Defesa", "#regras/ferimentos"], ["Ajuda de aliados", "#regras/rolagens"], ["Rolador de dados", "#dados"], ["Oráculo — Tarô e Sim ou não", "#oraculo"], ["Variantes — 10 módulos", "#variantes"], ["Traços e Vocações", "#variantes/tracos-vocacoes"], ["Qualidades", "#variantes/qualidades"], ["Esforço Arriscado", "#variantes/esforco-arriscado"], ["Vínculos", "#variantes/vinculos"], ["Estresse Crescente", "#variantes/estresse-crescente"], ["Surpresas Preparadas", "#variantes/surpresas-preparadas"], ["Equipamento Retrospectivo", "#variantes/equipamento-retrospectivo"], ["Evolução por Sacrifício", "#variantes/evolucao-sacrificio"], ["Reagrupamento em Base", "#variantes/reagrupamento-base"], ["Adversários com Obstáculos", "#variantes/adversarios-obstaculos"], ["PDF e Biblioteca", "#biblioteca"]];
 let overlay=document.getElementById('searchOverlay'),searchInput=document.getElementById('searchInput'),searchResults=document.getElementById('searchResults');
 function renderSearch(){let term=searchInput.value.trim().toLocaleLowerCase('pt-BR'),hits=searchable.filter(a=>!term||a[0].toLocaleLowerCase('pt-BR').includes(term));searchResults.replaceChildren();if(!hits.length){let p=document.createElement('p');p.textContent='Nenhum resultado encontrado.';searchResults.append(p);return}hits.forEach(a=>{let b=document.createElement('button');b.type='button';b.className='search-item';b.dataset.go=a[1];b.textContent=a[0]+'  →';searchResults.append(b)})}
 function searchToggle(open){overlay.classList.toggle('open',open);if(open){renderSearch();searchInput.focus()}else{document.getElementById('openSearch').focus()}}
@@ -1042,12 +1284,12 @@ function filterVariants(category){
  variantCategory=allowed.includes(category)?category:'todos';
  document.querySelectorAll('[data-vfilter]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.vfilter===variantCategory)));
  let shown=0;
- document.querySelectorAll('.variant-module').forEach(m=>{const visible=variantCategory==='todos'||m.dataset.vcategory===variantCategory;m.hidden=!visible;if(visible)shown++});
+ document.querySelectorAll('#variantes .variant-module').forEach(m=>{const visible=variantCategory==='todos'||m.dataset.vcategory===variantCategory;m.hidden=!visible;if(visible)shown++});
  document.getElementById('variantCount').textContent=shown+' de 10';
 }
 document.querySelector('.variant-filters').addEventListener('click',e=>{const b=e.target.closest('[data-vfilter]');if(b)filterVariants(b.dataset.vfilter)});
-document.getElementById('variantExpandAll').addEventListener('click',()=>{document.querySelectorAll('.variant-module:not([hidden])').forEach(e=>e.open=true)});
-document.getElementById('variantCollapseAll').addEventListener('click',()=>{document.querySelectorAll('.variant-module').forEach(e=>e.open=false)});
+document.getElementById('variantExpandAll').addEventListener('click',()=>{document.querySelectorAll('#variantes .variant-module:not([hidden])').forEach(e=>e.open=true)});
+document.getElementById('variantCollapseAll').addEventListener('click',()=>{document.querySelectorAll('#variantes .variant-module').forEach(e=>e.open=false)});
 function showVariant(slug){
  const m=document.getElementById('v-'+slug);
  if(!m)return;
