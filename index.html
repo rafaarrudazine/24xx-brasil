@@ -227,6 +227,15 @@
 #oraculo .oracle-result p{margin:7px 0 0}
 #oraculo .oracle-keywords{font-weight:700}
 #oraculo #oracle-copy-status:empty{margin:0}
+#oraculo .oracle-stars:not(:empty){margin:0 0 12px;padding:12px 16px;border:1px solid var(--line);background:var(--paper)}
+#oraculo .oracle-stars p{margin:0 0 8px;overflow-wrap:anywhere}
+#oraculo .oracle-stars details{margin-top:12px;padding-top:8px;border-top:1px solid var(--line)}
+#oraculo .oracle-stars summary{cursor:pointer;font-weight:700;padding:6px 0}
+#oraculo .oracle-stars summary:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+#oraculo .oracle-stars .btn{min-height:44px;padding:8px 11px}
+#oraculo .oracle-star-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:10px;margin-top:10px}
+#oraculo .oracle-star-option p:not(:empty){margin:6px 0 0}
+#oraculo .oracle-stars .oracle-stars-credit{margin:12px 0 0;color:var(--muted);font-size:.8rem}
 </style>
 <link rel="icon" type="image/png" href="./assets/24xx_brasil_d6.png">
 <meta property="og:type" content="website"><meta property="og:title" content="24XX Brasil — Aprenda, jogue, crie."><meta property="og:description" content="Regras, variantes e fichas de personagem em português para jogar e criar com 24XX.">
@@ -956,6 +965,7 @@
       <div id="oracle-card" class="oracle-panel">
         <button class="btn" id="oracle-draw" type="button">Tirar carta</button>
         <div class="oracle-live" id="oracle-card-live" aria-live="polite" aria-atomic="true"></div>
+        <div class="oracle-stars" id="oracle-card-stars"></div>
         <button class="btn ghost" id="oracle-copy-card" type="button" hidden>Copiar resultado</button>
       </div>
       <div id="oracle-answer" class="oracle-panel" hidden>
@@ -976,6 +986,7 @@
           <button class="btn ghost" id="oracle-copy-answer" type="button" hidden>Copiar resultado</button>
         </div>
         <div class="oracle-live" id="oracle-follow-live" aria-live="polite" aria-atomic="true"></div>
+        <div class="oracle-stars" id="oracle-follow-stars"></div>
       </div>
       <p id="oracle-copy-status" role="status"></p>
     </div>
@@ -1081,6 +1092,8 @@ function iniciarOraculo() {
   const cartaSaida = porId('oracle-card-live');
   const respostaSaida = porId('oracle-answer-live');
   const desdobramentoSaida = porId('oracle-follow-live');
+  const cartaEstrelas = porId('oracle-card-stars');
+  const desdobramentoEstrelas = porId('oracle-follow-stars');
   const avisoCopia = porId('oracle-copy-status');
   const chance = porId('oracle-chance');
   const pergunta = porId('oracle-question');
@@ -1096,6 +1109,51 @@ function iniciarOraculo() {
     ['Sim, mas…', 'A afirmação traz um custo, uma condição ou uma dificuldade.'],
     ['Sim', 'A afirmação se aplica diretamente.'],
     ['Sim, e…', 'A afirmação traz uma vantagem ou oportunidade adicional.']
+  ];
+  const posicoes = [
+    'Ascendente · crescimento / possibilidade',
+    'Sepultado · memória / morte',
+    'Geminado · intimidade / dependência',
+    'Minguante · fome / decadência',
+    'Enraizado · estabilidade / fartura',
+    'Curvado · submissão / misericórdia',
+    'Em colisão · mudança / violência',
+    'Em chamas · honestidade / orgulho',
+    'Velado · fé / engano',
+    'Exilado · culpa / autonomia',
+    'Coroado · ambição / ruína',
+    'Refletido · inversão / vaidade'
+  ];
+  const consultasEstrelas = [
+    ['Resposta', 'Consultar resposta', [
+      'É certo', 'Muito provável', 'Provável', 'Tende a sim',
+      'É possível', 'Há uma chance remota', 'Só há silêncio', 'Improvável',
+      'Muito improvável', 'Tende a não', 'Quase impossível', 'Impossível'
+    ]],
+    ['Signo', 'Rolar signo', [
+      'A Presa · hostilidade / medo', 'As Asas · liberdade / natureza',
+      'A Gaiola · proteção / obrigação', 'A Mão · criação / desvio da atenção',
+      'A Máscara · persuasão / vergonha', 'O Olho · julgamento / segredos',
+      'A Criança · aprendizado / ganância', 'O Viajante · errância / acaso',
+      'O Ancião · autoridade / tradição', 'A Frota · direção / luta',
+      'O Conselho · oposição / ciclos', 'A Legião · unificação / identidade'
+    ]],
+    ['Quantidade', 'Rolar quantidade', [
+      'Uma quantidade avassaladora', 'Muito mais do que o esperado',
+      'Mais do que o habitual', 'Um pouco mais do que o habitual',
+      'Exatamente o esperado', 'Pode ser mais ou menos',
+      'Um pouco abaixo da média', 'Menos do que você esperava encontrar',
+      'Muito menos do que o esperado', 'Quase nada resta',
+      'À beira da extinção', 'Totalmente ausente'
+    ]],
+    ['Cor', 'Rolar cor', [
+      'Cinza-escuro · sombrio / claustrofóbico', 'Amarelo-dourado · convidativo / glorioso',
+      'Azul-celeste · encantador / magnífico', 'Roxo-profundo · isolado / inquietante',
+      'Verde-floresta · recôndito / abundante', 'Lavanda · harmonioso / místico',
+      'Laranja-queimado · charmoso / poderoso', 'Cinza-pálido · abandonado / lúgubre',
+      'Azul-meia-noite · encoberto / mágico', 'Marrom-terroso · tranquilo / sóbrio',
+      'Vermelho-carmesim · penetrante / agourento', 'Branco-suave · delicado / sereno'
+    ]]
   ];
   let baralho;
   let consulta = 0;
@@ -1136,17 +1194,55 @@ function iniciarOraculo() {
     saida.replaceChildren(card);
   }
 
-  async function tirarCarta(botao, saida, consultaAtual) {
+  function sorteioEstrelas(rotulo, acao, opcoes) {
+    const botao = elemento('button', acao, 'btn ghost');
+    botao.type = 'button';
+    const resultado = elemento('p', '');
+    resultado.setAttribute('role', 'status');
+    resultado.dataset.oracleStarResult = '';
+    function rolar() {
+      const face = Math.floor(Math.random() * opcoes.length);
+      const titulo = elemento('strong', rotulo + ' — ');
+      resultado.replaceChildren(titulo, document.createTextNode(opcoes[face]));
+      avisoCopia.textContent = '';
+    }
+    botao.addEventListener('click', rolar);
+    return { botao, resultado, rolar };
+  }
+
+  function mostrarEstrelas(saida) {
+    const posicao = sorteioEstrelas('Em movimento', 'Rolar outra posição', posicoes);
+    const extras = elemento('details', '');
+    const grade = elemento('div', '', 'oracle-star-options');
+    for (const [rotulo, acao, opcoes] of consultasEstrelas) {
+      const { botao, resultado } = sorteioEstrelas(rotulo, acao, opcoes);
+      const opcao = elemento('div', '', 'oracle-star-option');
+      opcao.append(botao, resultado);
+      grade.append(opcao);
+    }
+    const credito = elemento('p', 'Inspirado em ', 'oracle-stars-credit');
+    const fonte = elemento('a', 'Ask the Stars, de Chris McDowall');
+    fonte.href = 'https://www.bastionland.com/2020/12/ask-stars-minimal-solo-rpg.html';
+    credito.append(fonte, document.createTextNode('.'));
+    const dica = elemento('p', 'Combine o signo com a posição. Para a quantidade, pense no que seria habitual antes de rolar.');
+    extras.append(elemento('summary', 'Pergunte às Estrelas'), dica, grade, credito);
+    saida.replaceChildren(posicao.resultado, posicao.botao, extras);
+    posicao.rolar();
+  }
+
+  async function tirarCarta(botao, saida, estrelas, consultaAtual) {
     if (botao.getAttribute('aria-disabled') === 'true') return;
     const vigente = () => consultaAtual === undefined || consultaAtual === consulta;
     avisoCopia.textContent = '';
     botao.setAttribute('aria-disabled', 'true');
     saida.textContent = 'Carregando cartas…';
+    estrelas.replaceChildren();
     if (consultaAtual === undefined) copiarCarta.hidden = true;
     try {
       const cartas = await carregarBaralho();
       if (!vigente()) return;
       mostrarCarta(saida, cartas[Math.floor(Math.random() * cartas.length)]);
+      mostrarEstrelas(estrelas);
       botao.textContent = 'Tirar novamente';
       if (consultaAtual === undefined) copiarCarta.hidden = false;
     } catch {
@@ -1168,8 +1264,8 @@ function iniciarOraculo() {
     avisoCopia.textContent = '';
   }));
 
-  cartaBotao.addEventListener('click', () => tirarCarta(cartaBotao, cartaSaida));
-  desdobrarBotao.addEventListener('click', () => tirarCarta(desdobrarBotao, desdobramentoSaida, consulta));
+  cartaBotao.addEventListener('click', () => tirarCarta(cartaBotao, cartaSaida, cartaEstrelas));
+  desdobrarBotao.addEventListener('click', () => tirarCarta(desdobrarBotao, desdobramentoSaida, desdobramentoEstrelas, consulta));
 
   porId('oracle-form').addEventListener('submit', evento => {
     evento.preventDefault();
@@ -1187,6 +1283,7 @@ function iniciarOraculo() {
     );
     respostaSaida.replaceChildren(card);
     desdobramentoSaida.replaceChildren();
+    desdobramentoEstrelas.replaceChildren();
     desdobrarBotao.textContent = 'Tirar carta para o desdobramento';
     desdobrarBotao.removeAttribute('aria-disabled');
     desdobrarBotao.hidden = indice === 1 || indice === 4;
@@ -1196,8 +1293,10 @@ function iniciarOraculo() {
 
   function permitirCopia(botao, ...saidas) {
     botao.addEventListener('click', async () => {
-      const texto = saidas.map(saida => saida.querySelector('article')?.innerText)
-        .filter(Boolean).join('\n\n');
+      const texto = saidas.flatMap(saida => [
+        saida.querySelector('article')?.innerText,
+        ...Array.from(saida.querySelectorAll('[data-oracle-star-result]'), resultado => resultado.textContent)
+      ]).filter(Boolean).join('\n\n');
       try {
         await navigator.clipboard.writeText(texto);
         avisoCopia.textContent = 'Resultado copiado.';
@@ -1206,8 +1305,8 @@ function iniciarOraculo() {
       }
     });
   }
-  permitirCopia(copiarCarta, cartaSaida);
-  permitirCopia(copiarResposta, respostaSaida, desdobramentoSaida);
+  permitirCopia(copiarCarta, cartaSaida, cartaEstrelas);
+  permitirCopia(copiarResposta, respostaSaida, desdobramentoSaida, desdobramentoEstrelas);
 }
 iniciarOraculo();
 </script></body></html>
