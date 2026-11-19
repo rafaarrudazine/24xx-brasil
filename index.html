@@ -1278,7 +1278,7 @@ function iniciarOraculo() {
   }
 
   function mostrarEstrelas(saida) {
-    const posicao = sorteioEstrelas('Em movimento', 'Rolar outra posição', posicoes);
+    const posicao = sorteioEstrelas('Posição', 'Rolar outra posição', posicoes);
     const extras = elemento('details', '');
     const grade = elemento('div', '', 'oracle-star-options');
     for (const [rotulo, acao, opcoes] of consultasEstrelas) {
