@@ -223,6 +223,9 @@
 #oraculo form button{justify-self:start}
 #oraculo .oracle-live:not(:empty){margin-top:16px;overflow-wrap:anywhere}
 #oraculo .oracle-result{border:1px solid var(--line);border-top:3px solid var(--ink);padding:14px 16px;margin:0 0 12px;background:var(--paper)}
+#oraculo .oracle-result-with-art{display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:16px}
+#oraculo .oracle-card-art{display:block;flex:none;width:min(100%,160px);height:auto;background:#fff}
+#oraculo .oracle-card-reading{flex:1 1 290px;min-width:0}
 #oraculo .oracle-result h2{font-size:clamp(24px,5vw,36px);line-height:1.1;margin:5px 0 10px}
 #oraculo .oracle-result p{margin:7px 0 0}
 #oraculo .oracle-keywords{font-weight:700}
@@ -1231,15 +1234,30 @@ function iniciarOraculo() {
 
   function mostrarCarta(saida, carta) {
     const card = elemento('article', '', 'oracle-result');
+    const imagem = document.createElement('img');
+    imagem.className = 'oracle-card-art';
+    imagem.alt = 'Ilustração da carta ' + carta.nome;
+    imagem.width = 600;
+    imagem.height = 1020;
+    imagem.decoding = 'async';
+    imagem.addEventListener('error', () => {
+      imagem.remove();
+      card.classList.remove('oracle-result-with-art');
+    }, { once: true });
+    imagem.src = './assets/tarot/' + carta.id + '.webp';
+    card.classList.add('oracle-result-with-art');
+
+    const leitura = elemento('div', '', 'oracle-card-reading');
     const familia = carta.arcano === 'maior'
       ? 'Arcano maior · ' + carta.valor
       : carta.naipe.charAt(0).toUpperCase() + carta.naipe.slice(1);
-    card.append(
+    leitura.append(
       elemento('p', familia, 'eyebrow'),
       elemento('h2', carta.nome),
       elemento('p', carta.palavras.join(' · '), 'oracle-keywords'),
       elemento('p', 'Em jogo: ' + carta.pergunta)
     );
+    card.append(imagem, leitura);
     saida.replaceChildren(card);
   }
 
