@@ -162,7 +162,10 @@
 @media(max-width:700px){.variant-intro{padding:31px 0 16px}.variant-how{grid-template-columns:1fr;gap:10px;margin-top:20px}.variant-list{grid-template-columns:1fr;gap:10px;padding-bottom:40px}.variant-module[open]{grid-column:auto}.variant-module summary{min-height:125px;padding:19px 17px;gap:10px}.variant-body{padding:20px 17px 29px}.variant-toolbar{padding-top:20px}.variant-filter{font-size:11px;padding:7px 9px}.variant-toggle{font-size:20px}.variant-name{font-size:25px}.variant-table-scroll table{min-width:515px}.variant-outro{padding:32px 0 50px}}
 
 /* v0.7 — introdução compacta para revelar os módulos sem rolagem longa. */
-#v-a-luz-do-dia-no-escuro .variant-table-scroll table{min-width:0;overflow-wrap:anywhere}#v-a-luz-do-dia-no-escuro .variant-example p+p{margin-top:10px}
+#v-a-luz-do-dia-no-escuro .variant-table-scroll table{min-width:0;overflow-wrap:anywhere}
+#v-a-luz-do-dia-no-escuro .variant-table-scroll .dia-noite-resultado{width:1%;white-space:nowrap;overflow-wrap:normal}
+@media(max-width:700px){#v-a-luz-do-dia-no-escuro .variant-table-scroll th,#v-a-luz-do-dia-no-escuro .variant-table-scroll td{padding:8px}#v-a-luz-do-dia-no-escuro .variant-table-scroll .dia-noite-faixa{display:block}#v-a-luz-do-dia-no-escuro .variant-table-scroll .dia-noite-separador{display:none}}
+#v-a-luz-do-dia-no-escuro .variant-example p+p{margin-top:10px}
 #variantes .page-title{padding:30px 0 14px}
 #variantes .page-title h1{margin:7px 0 7px}
 #variantes .page-title .lead{margin:0;font-size:16px;line-height:1.4}
@@ -1127,11 +1130,11 @@
     </ul>
     <div class="variant-table-scroll" tabindex="0" role="region" aria-label="Resultados dos riscos diurno e noturno">
       <table>
-        <thead><tr><th scope="col">Resultado</th><th scope="col">De dia</th><th scope="col">À noite</th></tr></thead>
+        <thead><tr><th scope="col" class="dia-noite-resultado">Resultado</th><th scope="col">De dia</th><th scope="col">À noite</th></tr></thead>
         <tbody>
-          <tr><td>1–2 · Desastre</td><td>O risco combinado se concretiza.</td><td>O risco agravado se concretiza.</td></tr>
-          <tr><td>3–4 · Revés</td><td>O Narrador explica qual consequência o personagem sofre se insistir. O jogador pode aceitar o Revés ou abandonar a abordagem e evitar essa consequência.</td><td>Aplique o Revés normalmente. A ação tem uma consequência menor ou alcança parte do objetivo.</td></tr>
-          <tr><td>5+ · Sucesso</td><td>A ação dá certo.</td><td>A ação dá certo.</td></tr>
+          <tr><td class="dia-noite-resultado"><span class="dia-noite-faixa">1–2</span><span class="dia-noite-separador" aria-hidden="true"> ·</span> <span>Desastre</span></td><td>O risco combinado se concretiza.</td><td>O risco agravado se concretiza.</td></tr>
+          <tr><td class="dia-noite-resultado"><span class="dia-noite-faixa">3–4</span><span class="dia-noite-separador" aria-hidden="true"> ·</span> <span>Revés</span></td><td>O Narrador explica qual consequência o personagem sofre se insistir. O jogador pode aceitar o Revés ou abandonar a abordagem e evitar essa consequência.</td><td>Aplique o Revés normalmente. A ação tem uma consequência menor ou alcança parte do objetivo.</td></tr>
+          <tr><td class="dia-noite-resultado"><span class="dia-noite-faixa">5+</span><span class="dia-noite-separador" aria-hidden="true"> ·</span> <span>Sucesso</span></td><td>A ação dá certo.</td><td>A ação dá certo.</td></tr>
         </tbody>
       </table>
     </div>
